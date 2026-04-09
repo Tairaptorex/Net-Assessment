@@ -1,0 +1,204 @@
+.checklist {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.checklist label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.checklist input {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.checklist input:checked + span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.checklist h3 {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#role-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 10000;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+}
+
+#role-popup {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#role-popup.show {
+    display: flex;
+    opacity: 1;
+}
+
+.glossary-term {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #555;
+
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 2px 6px;
+    border-radius: 4px;
+
+    transition: all 0.2s ease;
+}
+
+.glossary-term:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+.glossary-term {
+    text-decoration-color: #888;
+}
+
+#glossary p:target {
+    background-color: rgb(255, 216, 216);
+    /* padding: 5px; */
+    /* border-radius: 5px; */
+}
+
+#glossary p {
+    transition: background-color 0.5s ease;
+    scroll-margin-top: 100px;
+}
+
+#glossary {
+    background: rgb(255, 218, 218) !important;
+}
+
+.glossary-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.glossary-term-entry {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 15px;
+    margin: 6px 0;
+
+    border-bottom: 1px solid #0000001a;
+    padding-bottom: 6px;
+}
+
+.glossary-term-entry:target {
+    background-color: rgba(230, 98, 98, 0.2);
+    color: rgb(6, 6, 7);
+    font-weight: bold;
+    padding: 12px 6px;
+    padding-left: 20px;
+    border-radius: 6px;
+    margin-top: -6px;
+    
+}
+
+.term {
+    font-weight: bold;
+    /* text-decoration: underline; */
+    color: #444;
+}
+
+.definition {
+    line-height: 1.5;
+}
+
+.media-card {
+    margin: 20px 0;
+}
+
+.video-container {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    background: black;
+}
+
+/* Video itself */
+.custom-video {
+    width: 100%;
+    display: block;
+}
+
+/* Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.3);
+    transition: opacity 0.3s ease;
+}
+
+/* Play button */
+.play-btn {
+    font-size: 40px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    border-radius: 50%;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Hide overlay when playing */
+.video-container.playing .video-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-container:not(.playing) .video-overlay {
+    opacity: 1;
+}
+
+/* .video-container:hover video {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+} */

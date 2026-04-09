@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Page</title>
+    <link rel="stylesheet" href="Styles/styles.css">
+    <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/student_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- A SIDE: Sidebar Navigation -->
+    <div class="student-sidebar">
+        <h2>Contents</h2>
+        <a href="#welcome">Welcome</a>
+        <a href="#before">Before You Go</a>
+        <a href="#welcome-onto">Going Onto the Marae</a>
+        <a href="#inside">Inside the Wharenui</a>
+        <a href="#remember">Remember</a>
+    </div>
+
+    <!-- B SIDE: Main Content -->
+    <div class="student-main-content">
+
+        <!-- Banner -->
+        <div class="student-banner">
+            <h1>Visiting A Marae</h1>
+            <h3>A simple guide for students</h3>
+            <a href="#" id="switchBack">Return to Teacher View?</a>
+        </div>
+
+        <!-- Content Cards -->
+        <div id="welcome" class="card">
+            <h2>Welcome!</h2>
+            <p>A marae is a very special place for Māori.</p>
+
+            <p>It is a place where people:</p>
+            <ul>
+                <li>Come together</li>
+                <li>Share stories</li>
+                <li>Learn</li>
+                <li>Celebrate</li>
+                <li>Remember their ancestors</li>
+            </ul>
+            <p>When we visit, we show <b>manaakitanga</b>, which is kindness and respect.</p>
+
+            <div class="card-quote">
+                <p><b>Top tip:</b> A marae is like a home, a school, and a community space all in one.</p>
+            </div>
+        </div>
+
+        <div id="before" class="card">
+            <h2>Before You Go</h2>
+
+            <p>We get ready before visiting a marae.</p>
+
+            <ul>
+                <li>Arrive on time</li>
+                <li>Wear tidy clothes</li>
+                <li>Listen to your teacher</li>
+            </ul>
+
+            <div class="card-quote">
+                <p><b>Top tip:</b> Turn off your phone and give your full attention.</p>
+            </div>
+        </div>
+
+        <div id="welcome-onto" class="card">
+            <h2>Going Onto the Marae</h2>
+
+            <p>We do not walk onto the marae by ourselves.</p>
+
+            <div class="card-quote">
+                <p><b>Important:</b> Wait to be welcomed on.</p>
+            </div>
+
+            <ul>
+                <li>Walk together as a group</li>
+                <li>Stay quiet</li>
+                <li>Listen carefully</li>
+            </ul>
+
+            <p>You might see or hear:</p>
+            <ul>
+                <li>Karanga (calling)</li>
+                <li>Speeches</li>
+                <li>Singing</li>
+                <li>Haka</li>
+            </ul>
+
+            <p>Afterwards, we greet people by:</p>
+            <ul>
+                <li>Shaking hands</li>
+                <li>Doing a hongi (pressing noses)</li>
+            </ul>
+
+            <div class="card-quote">
+                <p><b>Top tip:</b> Just follow your teacher and others around you.</p>
+            </div>
+        </div>
+
+        <div id="inside" class="card">
+            <h2>Inside the Wharenui</h2>
+
+            <p>The wharenui is a very special place.</p>
+
+            <p><b>Before going in:</b></p>
+            <ul>
+                <li>Take off your shoes</li>
+            </ul>
+
+            <p><b>Inside:</b></p>
+            <ul>
+                <li>Walk calmly</li>
+                <li>Speak quietly</li>
+                <li>No food or drinks</li>
+                <li>Be respectful</li>
+            </ul>
+
+            <div class="card-quote">
+                <p>A marae is very important, so we show our best behaviour.</p>
+            </div>
+        </div>
+
+        <div id="remember" class="card">
+            <h2>Remember</h2>
+
+            <ul>
+                <li>Be respectful</li>
+                <li>Listen carefully</li>
+                <li>Follow instructions</li>
+                <li>Be kind to others</li>
+            </ul>
+
+            <div class="card-quote">
+                <p><b>Important:</b> Do not take photos unless you are told it is okay.</p>
+            </div>
+            <br>
+            <p>It might feel like a lot, but don’t worry.</p>
+
+            <p>If you try your best and show respect, you will have an amazing experience!</p>
+        </div>
+
+        <div class="checklist">
+                <h2>Student Checklist</h2>
+                <hr>
+                <br>
+                <label><input type="checkbox"><span>Be on time, tidy, phones off</span></label>
+                <h3>When on the marae</h3>
+                <label><input type="checkbox"><span>Wait to be welcomed</span></label>
+                <label><input type="checkbox"><span>Walk, stay quiet, listen</span></label>
+                <h3>During the pōwhiri</h3>
+                <label><input type="checkbox"><span>Sit still, no talking or kai</span></label>
+                <h3>During greetings</h3>
+                <label><input type="checkbox"><span>Follow your teacher</span></label>
+                <h3>During Kai</h3>
+                <label><input type="checkbox"><span>Wait for karakia</span></label>
+                <label><input type="checkbox"><span>Remember good manners</span></label>
+                <h3>Wharenui</h3>
+                <label><input type="checkbox"><span>Shoes off</span></label>
+                <label><input type="checkbox"><span>Quiet, no food</span></label>
+                <h3>Remember</h3>
+                <label><input type="checkbox"><span>To show respect (manaakitanga)</span></label>
+                <label><input type="checkbox"><span>To take no photos unless allowed</span></label>
+
+            </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>MSC Footer</p>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    document.getElementById("switchBack").addEventListener("click", () => {
+        localStorage.setItem("userRole", "teacher");
+        window.location.href = "index.html";
+    });
+</script>
+
+</html>

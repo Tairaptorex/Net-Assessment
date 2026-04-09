@@ -1,0 +1,89 @@
+        :root {
+            /* Colours */
+            --student_primary: #42a9bb;
+            --student_secondary: #3a4552;
+            --student_accent: #688191;
+
+            --student_background: #f4f4f4;
+            --student_card-bg: rgb(230, 230, 230);
+            --student_text: #333;
+
+            /* Shadows */
+            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
+
+            /* Fonts */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+        
+        .student-banner a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .student-banner a:hover {
+            background-color: #77c0d3;
+        }
+
+        .student-banner a {
+            transition: all 0.2s ease;
+        }
+
+        /* A SIDE (Sidebar) */
+        .student-sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--student_secondary);
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .student-sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .student-sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .student-sidebar a:hover {
+            background-color: #5e7a85;
+        }
+
+        .student-sidebar a {
+            transition: all 0.2s ease;
+        }
+
+        /* B SIDE (Main Content) */
+        .student-main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+
+            /* background-image: url("../Images/WeaveTemplate.jpg"); */
+            background-repeat: repeat;
+            opacity: 0.95;
+            background-attachment: fixed;
+        }
+
+        /* Banner */
+        .student-banner {
+            background-color: var(--student_primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }

@@ -1,0 +1,258 @@
+        :root {
+            /* Colours */
+            --primary: #bb4242;
+            --secondary: #523a3a;
+            --accent: #916868;
+
+            --background: #f4f4f4;
+            --card-bg: rgb(230, 230, 230);
+            --text: #333;
+
+            /* Shadows */
+            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
+
+            /* Fonts */
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+        
+        
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            font-family: var(--font-body);
+            color: var(--text);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            letter-spacing: 0.5px;
+        }
+
+        p, a {
+            font-family: var(--font-body);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        /* A SIDE (Sidebar) */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .sidebar a:hover {
+            background-color: #855e5e;
+        }
+
+        .sidebar a {
+            transition: all 0.2s ease;
+        }
+
+        /* B SIDE (Main Content) */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            width: calc(100% - 250px);
+
+            background-image: url("../Images/WeaveTemplate.jpg");
+            background-repeat: repeat;
+            opacity: 0.95;
+            background-attachment: fixed;
+        }
+
+        /* Banner */
+        .banner {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Content Cards */
+        .card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+
+            box-shadow: var(--shadow-light);
+        }
+
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .card img {
+            max-width: 100%;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #ddd;
+            border-radius: 10px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .sidebar a.active {
+            background-color: var(--accent);
+            font-weight: bold;
+        }
+
+        .image-card {
+            margin: 20px 0;
+            text-align: center;
+            display: inline-block;
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .image-card figcaption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+
+            background: rgba(0, 0, 0, 0.85);
+
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            z-index: 9999; /* VERY important */
+        }
+
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #lightbox {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #lightbox.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        #lightbox-caption {
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: auto;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            z-index: 1000;
+        }
+
+        .sidebar h2 {
+            display: none;
+        }
+
+        .sidebar a {
+            margin: 0;
+            flex: 0 0 auto;
+        }
+
+        .main-content {
+            margin-left: 0;
+            margin-top: 80px; /* pushes content below fixed nav */
+            width: 100%;
+        }
+
+        .sidebar {
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .sidebar::-webkit-scrollbar {
+            display: none; /* Chrome */
+        }
+    }
