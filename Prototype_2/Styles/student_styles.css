@@ -87,3 +87,7 @@
             border-radius: 10px;
             margin-bottom: 20px;
         }
+
+        .card li::before {
+            border-left: 0.5rem solid var(--student_primary) !important;
+        }
