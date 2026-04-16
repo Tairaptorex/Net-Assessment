@@ -67,16 +67,23 @@
             transition: all 0.2s ease;
         }
 
+        .student-sidebar a.active {
+            background-color: var(--student_accent);
+            font-weight: bold;
+        }
+
         /* B SIDE (Main Content) */
         .student-main-content {
             margin-left: 250px;
             padding: 20px;
             width: calc(100% - 250px);
 
-            /* background-image: url("../Images/WeaveTemplate.jpg"); */
-            background-repeat: repeat;
-            opacity: 0.95;
+            background-image: url("../Images/mount.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             background-attachment: fixed;
+            opacity: 0.95;
         }
 
         /* Banner */

@@ -99,7 +99,7 @@
 }
 
 #glossary {
-    background: rgb(255, 218, 218) !important;
+    background: rgb(228, 201, 201) !important;
 }
 
 .glossary-grid {
@@ -119,7 +119,7 @@
 }
 
 .glossary-term-entry:target {
-    background-color: rgba(230, 98, 98, 0.2);
+    background-color: rgba(153, 126, 126, 0.2);
     color: rgb(6, 6, 7);
     font-weight: bold;
     padding: 12px 6px;
@@ -198,7 +198,110 @@
     opacity: 1;
 }
 
+#quiz-content {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
 /* .video-container:hover video {
     transform: scale(1.02);
     transition: transform 0.3s ease;
 } */
+
+/* Toggle row */
+.banner-toggle {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* Arrow */
+.arrow {
+    display: inline-block;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotate when open */
+.arrow.open {
+    transform: rotate(90deg);
+}
+
+/* Dropdown container */
+.banner-dropdown {
+    overflow: hidden;
+    max-height: 1000px; /* open state */
+    transition: max-height 0.4s ease;
+}
+
+/* Closed state */
+.banner-dropdown.closed {
+    max-height: 0;
+}
+
+/* Inner content */
+.banner-content {
+    background: white;
+    color: #333;
+    margin-top: 12px; 
+    padding: 16px;    
+    border-radius: 8px;
+}
+
+/* Make list look clean */
+.banner-content ul {
+    margin-left: 20px;
+}
+
+.close-banner-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: var(--secondary);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.close-banner-btn:hover {
+    background: #855e5e;
+}
+
+.close-banner-btn:active {
+    transform: scale(0.98);
+}
+
+.banner-content ul {
+    list-style: none;
+    padding-left: 1.2rem;
+}
+
+.banner-content li {
+    position: relative;
+    padding-top: 6px;
+    padding-left: 0.6rem;
+}
+
+.banner-content li::before {
+    content: "•";
+    position: absolute;
+    left: -0.6rem;
+    top: 0.2rem;
+    color: #555;
+    font-size: 1.2rem;
+}

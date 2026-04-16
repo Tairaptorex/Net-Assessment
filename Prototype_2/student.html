@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="Styles/layout.css">
     <link rel="stylesheet" href="Styles/student_styles.css">
+    <link rel="stylesheet" href="Styles/student_quiz.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -20,6 +21,7 @@
         <a href="#welcome-onto">Going Onto the Marae</a>
         <a href="#inside">Inside the Wharenui</a>
         <a href="#remember">Remember</a>
+        <a href="#quiz_section">Quiz</a>
     </div>
 
     <!-- B SIDE: Main Content -->
@@ -144,7 +146,28 @@
             <p>If you try your best and show respect, you will have an amazing experience!</p>
         </div>
 
-        <div class="checklist">
+        <div id="quiz-section" class="card">
+        <script src="Quiz/quiz.js" defer></script>
+            <h2>Marae Quiz</h2>
+            <hr>
+            <div class="quiz-container">
+                <div id="quiz-card">
+                    <div id="quiz-content"> <!-- NEW WRAPPER -->
+                        <h2 id="question"></h2>
+                        <div id="answers"></div>
+                        <button id="startBtn">Begin Quiz</button>
+                    </div>
+
+                    <!-- Footer (DO NOT FADE) -->
+                    <div class="quiz-footer">
+                        <span id="progress"></span>
+                        <button id="startOverBtn">Start Over</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="checklist">
                 <h2>Student Checklist</h2>
                 <hr>
                 <br>
@@ -166,11 +189,11 @@
                 <label><input type="checkbox"><span>To show respect (manaakitanga)</span></label>
                 <label><input type="checkbox"><span>To take no photos unless allowed</span></label>
 
-            </div>
+            </div> -->
 
         <!-- Footer -->
         <div class="footer">
-            <p>Footer</p>
+            <p>2026 Anna, Devon, Tai</p>
         </div>
 
     </div>
@@ -180,6 +203,31 @@
     document.getElementById("switchBack").addEventListener("click", () => {
         localStorage.setItem("userRole", "teacher");
         window.location.href = "index.html";
+    });
+</script>
+
+<!-- LINK HIGHLIGHTING -->
+<script>
+    const sections = document.querySelectorAll(".card");
+    const navLinks = document.querySelectorAll(".student-sidebar a");
+
+    window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+
+            if (window.pageYOffset >= sectionTop - 250) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove("active");
+            if (link.getAttribute("href") === "#" + current) {
+                link.classList.add("active");
+            }
+        });
     });
 </script>
 

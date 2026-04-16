@@ -1,6 +1,6 @@
         :root {
             /* Colours */
-            --primary: #bb4242;
+            --primary: #a35151;
             --secondary: #523a3a;
             --accent: #916868;
 
@@ -9,7 +9,7 @@
             --text: #333;
 
             /* Shadows */
-            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.644);
             --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
 
             /* Fonts */
@@ -85,17 +85,19 @@
             padding: 20px;
             width: calc(100% - 250px);
 
-            /* background-image: url("../Images/WeaveTemplate.jpg"); */
-            background-repeat: repeat;
-            opacity: 0.95;
+            background-image: url("../Images/mount.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             background-attachment: fixed;
+            opacity: 0.95;
         }
 
         /* Banner */
         .banner {
             background-color: var(--primary);
             color: white;
-            padding: 40px;
+            padding: 25px 30px;
             border-radius: 10px;
             margin-bottom: 20px;
         }
@@ -114,10 +116,10 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .card:hover {
+        /* .card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
-        }
+        } */
 
         .card-quote {
             background-color: rgb(236, 236, 236);

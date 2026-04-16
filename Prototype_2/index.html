@@ -6,6 +6,7 @@
     <title>Assignment Website</title>
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="Styles/layout.css">
+    <link rel="stylesheet" href="Styles/quiz.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -19,6 +20,7 @@
         <a href="#section3">Entering A Marae</a>
         <a href="#section4">Inside The Wharenui</a>
         <a href="#section5">General Tips</a>
+        <a href="#quiz-section">Quiz</a>
         <a href="#section6">Checklist</a>
         <a href="#glossary">Glossary</a>
     </div>
@@ -28,8 +30,49 @@
 
         <!-- Banner -->
         <div class="banner">
-            <h1>Visiting a Marae</h1>
-            <h3>A Guide for Primary School Tamariki. </h3>
+
+            <div class="banner-toggle" id="bannerToggle">
+                <span class="arrow" id="arrow">&#9654;</span>
+                <div>
+                    <h1>Visiting a Marae</h1>
+                    <h3>A Guide for Primary School Tamariki.</h3>
+                </div>
+            </div>
+
+            <div class="banner-dropdown" id="bannerDropdown">
+                <div class="banner-content">
+                    <h2>How to use this resource</h2>
+                    <p>Below is a suggested lesson sequence for using this resource.</p>
+                    <br><hr>
+
+                    <h3>Lesson Sequence</h3>
+                    <ul>
+                        <li>Activate prior knowledge by asking students what they know about maraes.</li>
+                        <li>Screen-share this website for students to view.</li>
+                        <li>Read aloud (yourself or a student) the section <a href="#section1" class="glossary-term">A Little Background Information</a>.</li>
+                        <li>Ask students for definitions of highlighted words (e.g., Manaakitanga).</li>
+                        <li>Fullscreen and watch the video.</li>
+                        <li>Consolidate sections of the video by covering the following sections (<a href="#section2" class="glossary-term">Before Arrival</a> to <a href="#section5" class="glossary-term">General Tips</a>). You might ask students to read these sections aloud.</li>
+                        <li>Play the content quiz with students. You might ask for student answers for each question.</li>
+                        <li>If desired, students can play the quiz independently from within the student page.</li>
+                        <li>Conclude the lesson with a discussion or by directing students to access the student page of the website at home.</li>
+                    </ul>
+
+                    <br><br>
+
+                    <h3>Before the Day</h3>
+                    <ul>
+                        <li>Students may assess their readiness by accessing the student checklist.</li>
+                        <li>You may access the <a href="#section6" class="glossary-term">On the Day Quick Checklist</a> to assess readiness.</li>
+                    </ul>
+
+                    <button class="close-banner-btn" id="closeBannerBtn">
+                        Close ▲
+                    </button>
+                </div>
+            </div>
+
+
         </div>
 
         <!-- Content Cards -->
@@ -61,7 +104,7 @@
 
         <div class="media-card">
             <div class="video-container">
-                <video class="custom-video" src="Videos/Iter2.MP4"></video>
+                <video class="custom-video" src="Videos/Iteration 3 Tikanga at the Marae video 720.MP4"></video>
 
                 <div class="video-overlay">
                     <button class="play-btn">&#9658;</button>
@@ -162,8 +205,29 @@
             <p>Yes... and no.<br>It can feel like there is a lot to remember, and we can be afraid of making mistakes. But if we are respectful, kind, brave, and follow instructions, we’ll have an amazing time on the marae!<br><br>Our marae hosts will be looking forward to meeting us, getting to know us, and sharing their special marae with us.</p>
         </div>
 
+        <div id="quiz-section" class="card">
+        <script src="Quiz/quiz.js" defer></script>
+            <h2>Marae Quiz</h2>
+            <hr>
+            <div class="quiz-container">
+                <div id="quiz-card">
+                    <div id="quiz-content"> <!-- NEW WRAPPER -->
+                        <h2 id="question"></h2>
+                        <div id="answers"></div>
+                        <button id="startBtn">Begin Quiz</button>
+                    </div>
+
+                    <!-- Footer (DO NOT FADE) -->
+                    <div class="quiz-footer">
+                        <span id="progress"></span>
+                        <button id="startOverBtn">Start Over</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="section6" class="card">
-            <h2 style="text-align: center;">Teacher Quick Checklist</h2>
+            <h2 style="text-align: center;">On The Day Quick Checklist</h2>
             <div class="checklist">
                 
                     <h3>Before Arriving</h3>
@@ -434,6 +498,50 @@ const videoContainers = document.querySelectorAll(".video-container");
         observer.observe(container);
     });
 </script>
+
+<script>
+const toggle = document.getElementById("bannerToggle");
+const dropdown = document.getElementById("bannerDropdown");
+const arrow = document.getElementById("arrow");
+const closeBtn2 = document.getElementById("closeBannerBtn");
+
+// Load saved state
+const savedState = localStorage.getItem("bannerOpen");
+
+// Default = OPEN
+let isOpen = savedState !== "closed";
+
+function updateUI() {
+    if (isOpen) {
+        dropdown.classList.remove("closed");
+        arrow.classList.add("open");
+    } else {
+        dropdown.classList.add("closed");
+        arrow.classList.remove("open");
+    }
+}
+
+// Initial render
+updateUI();
+
+// Click toggle
+toggle.addEventListener("click", () => {
+    isOpen = !isOpen;
+
+    // Save state
+    localStorage.setItem("bannerOpen", isOpen ? "open" : "closed");
+
+    updateUI();
+});
+
+closeBtn2.addEventListener("click", () => {
+    isOpen = false;
+    localStorage.setItem("bannerOpen", "closed");
+    updateUI();
+});
+</script>
+
+
 
 </body>
 </html>

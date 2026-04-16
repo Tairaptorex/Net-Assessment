@@ -1,0 +1,143 @@
+.quiz-container {
+    width: 100%;
+}
+
+/* Card behaviour */
+#quiz-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    padding: 20px;
+
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+#quiz-content {
+    transition: opacity 0.4s ease-in-out;
+    opacity: 1;
+}
+
+#quiz-content.fade-out {
+    opacity: 0;
+    pointer-events: none; /* prevents clicking during fade */
+}
+
+#quiz-content.fade-in {
+    opacity: 1;
+}
+
+/* Optional: nice subtle slide + fade for even smoother feel */
+#quiz-content {
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+#quiz-content.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#quiz-content.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#startBtn {
+    width: 100%;
+    display: block;
+}
+
+#progress {
+    opacity: 0;
+}
+
+.quiz-active #progress {
+    opacity: 0.7;
+}
+
+/* Answers */
+#answers button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: var(--secondary);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#answers button.correct {
+    background: #4CAF50;
+}
+
+#answers button.wrong {
+    background: #e53935;
+}
+
+/* Footer area */
+.quiz-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Progress text */
+#progress {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.quiz-container button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.quiz-container button:hover {
+    background: var(--accent);
+    transform: translateY(-2px);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer pinned to bottom */
+.quiz-footer {
+    margin-top: auto;
+    padding-top: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Progress styling */
+#progress {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Hide start over until active */
+#startOverBtn {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.quiz-active #startOverBtn {
+    opacity: 1;
+    pointer-events: auto;
+}
