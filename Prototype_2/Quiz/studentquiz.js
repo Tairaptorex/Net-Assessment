@@ -26,7 +26,6 @@ What should you do if unsure?|1:Follow your teacher|0:Guess randomly|0:Ignore ru
 What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|1:Being respectful and kind
 `;
 
-    // Elements
     const questionEl = document.getElementById("question");
     const answersEl = document.getElementById("answers");
     const startBtn = document.getElementById("startBtn");
@@ -35,7 +34,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
     const quizContent = document.getElementById("quiz-content");
     const progressEl = document.getElementById("progress");
 
-    // Load questions
     function loadQuestions() {
         questions = QUESTION_DATA.trim().split("\n").map(line => {
             const parts = line.split("|");
@@ -49,7 +47,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
         });
     }
 
-    // Show current question
     function showQuestion() {
     const questionEl = document.getElementById("question");
     const answersEl = document.getElementById("answers");
@@ -71,7 +68,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
     quizCard.classList.add("quiz-active");
 }
 
-    // Handle selected answer
     function handleAnswer(button, correct) {
         const buttons = answersEl.querySelectorAll("button");
         buttons.forEach(btn => btn.disabled = true);
@@ -81,7 +77,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
         setTimeout(nextQuestion, 700);
     }
 
-    // Next question with clean fade
     function nextQuestion() {
         quizContent.classList.add("fade-out");
 
@@ -93,11 +88,8 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
                 return;
             }
 
-            // Update content while faded out
             showQuestion();
             void quizContent.offsetWidth;
-
-            // Start fade in
             quizContent.classList.remove("fade-out");
             quizContent.classList.add("fade-in");
             setTimeout(() => {
@@ -106,7 +98,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
         }, 400);
     }
 
-    // Show end screen
     function showEnd() {
         quizContent.classList.add("fade-out");
 
@@ -126,7 +117,6 @@ What helps you have a good experience?|0:Rushing|0:Being loud|0:Ignoring others|
         }, 400);
     }
 
-    // Reset quiz
 function startAtQuestionOne() {
     currentIndex = 0;
     showQuestion();

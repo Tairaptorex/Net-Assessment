@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Website</title>
+    <title>Preparing Students For A Marae Visit</title>
     <link rel="stylesheet" href="Styles/styles.css">
     <link rel="stylesheet" href="Styles/layout.css">
     <link rel="stylesheet" href="Styles/quiz.css">
@@ -12,7 +12,7 @@
 
 <body>
 
-    <!-- A SIDE: Sidebar Navigation -->
+    <!-- A SIDE -->
     <div class="sidebar">
         <h2>Contents</h2>
         <a href="#section1">Background Infomation</a>
@@ -25,7 +25,7 @@
         <a href="#glossary">Glossary</a>
     </div>
 
-    <!-- B SIDE: Main Content -->
+    <!-- B SIDE -->
     <div class="main-content">
 
         <!-- Banner -->
@@ -104,11 +104,9 @@
 
         <div class="media-card">
             <div class="video-container">
-                <video class="custom-video" src="Videos/Iteration 3 Tikanga at the Marae video 720.MP4"></video>
-
-                <div class="video-overlay">
-                    <button class="play-btn">&#9658;</button>
-                </div>
+                <video controls controlsList="nodownload" width="100%">
+                    <source src="videos/tikanga-marae-video-720.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
 
@@ -211,13 +209,12 @@
             <hr>
             <div class="quiz-container">
                 <div id="quiz-card">
-                    <div id="quiz-content"> <!-- NEW WRAPPER -->
+                    <div id="quiz-content">
                         <h2 id="question"></h2>
                         <div id="answers"></div>
                         <button id="startBtn">Begin Quiz</button>
                     </div>
 
-                    <!-- Footer (DO NOT FADE) -->
                     <div class="quiz-footer">
                         <span id="progress"></span>
                         <button id="startOverBtn">Start Over</button>
@@ -320,14 +317,13 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <p>2026 Anna, Devon, Tai</p>
         </div>
 
     </div>
 
-<!-- ROLE POPUP -->
+<!-- ROLE MODAL -->
 <div id="role-popup">
     <div class="popup-content">
         <h2>Welcome!</h2>
@@ -371,7 +367,7 @@
     });
 </script>
 
-<!-- LIGHTBOX -->
+<!-- LIGHTBOX. DEPRECIATED FOR NOW -->
 <script>
     const images = document.querySelectorAll(".clickable-image");
     const lightbox = document.getElementById("lightbox");
@@ -407,8 +403,6 @@
     const popup = document.getElementById("role-popup");
     const teacherBtn = document.getElementById("teacherBtn");
     const studentBtn = document.getElementById("studentBtn");
-
-    // Check saved choice
     const role = localStorage.getItem("userRole");
 
     if (!role) {
@@ -419,24 +413,20 @@
         window.location.href = "student.html";
     }
 
-    // Teacher click
     teacherBtn.addEventListener("click", () => {
         localStorage.setItem("userRole", "teacher");
         popup.style.display = "none";
-        document.body.style.overflow = "auto";
-    });
-
-    // Student click
+        document.body.style.overflow = "auto";});
     studentBtn.addEventListener("click", () => {
         localStorage.setItem("userRole", "student");
-        window.location.href = "student.html";
-    });
+        window.location.href = "student.html";});
 </script>
 
+
+<!-- CUSTOM PLAYER. NOW DEPRECIATED -->
 <script>
 const videoContainers = document.querySelectorAll(".video-container");
 
-    // only one video plays at a time
     function pauseAllVideos(except = null) {
         videoContainers.forEach(container => {
             const vid = container.querySelector("video");
@@ -447,7 +437,6 @@ const videoContainers = document.querySelectorAll(".video-container");
         });
     }
 
-    // Play logic
     videoContainers.forEach(container => {
         const video = container.querySelector("video");
         const playBtn = container.querySelector(".play-btn");
@@ -459,27 +448,22 @@ const videoContainers = document.querySelectorAll(".video-container");
             container.classList.add("playing");
         }
 
-        // Click button
         playBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             playVideo();
         });
 
-        // Click anywhere on video
         container.addEventListener("click", () => {
             if (video.paused) {
                 playVideo();
             }
         });
 
-        // When paused manually
         video.addEventListener("pause", () => {
             container.classList.remove("playing");
         });
     });
 
-
-    //pause when out of view
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const video = entry.target.querySelector("video");
@@ -493,10 +477,7 @@ const videoContainers = document.querySelectorAll(".video-container");
         threshold: 0.25
     });
 
-    // Observe all videos
-    videoContainers.forEach(container => {
-        observer.observe(container);
-    });
+    videoContainers.forEach(container => {observer.observe(container);});
 </script>
 
 <script>
@@ -504,11 +485,7 @@ const toggle = document.getElementById("bannerToggle");
 const dropdown = document.getElementById("bannerDropdown");
 const arrow = document.getElementById("arrow");
 const closeBtn2 = document.getElementById("closeBannerBtn");
-
-// Load saved state
 const savedState = localStorage.getItem("bannerOpen");
-
-// Default = OPEN
 let isOpen = savedState !== "closed";
 
 function updateUI() {
@@ -521,27 +498,17 @@ function updateUI() {
     }
 }
 
-// Initial render
 updateUI();
 
-// Click toggle
 toggle.addEventListener("click", () => {
     isOpen = !isOpen;
-
-    // Save state
-    localStorage.setItem("bannerOpen", isOpen ? "open" : "closed");
-
-    updateUI();
-});
+    localStorage.setItem("bannerOpen", isOpen ? "open" : "closed"); 
+    updateUI();});
 
 closeBtn2.addEventListener("click", () => {
     isOpen = false;
     localStorage.setItem("bannerOpen", "closed");
-    updateUI();
-});
+    updateUI();});
 </script>
-
-
-
 </body>
 </html>

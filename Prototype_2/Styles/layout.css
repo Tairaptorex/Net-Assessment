@@ -89,8 +89,6 @@
 
 #glossary p:target {
     background-color: rgb(255, 216, 216);
-    /* padding: 5px; */
-    /* border-radius: 5px; */
 }
 
 #glossary p {
@@ -131,7 +129,6 @@
 
 .term {
     font-weight: bold;
-    /* text-decoration: underline; */
     color: #444;
 }
 
@@ -151,13 +148,11 @@
     background: black;
 }
 
-/* Video itself */
 .custom-video {
     width: 100%;
     display: block;
 }
 
-/* Overlay */
 .video-overlay {
     position: absolute;
     top: 0;
@@ -173,7 +168,6 @@
     transition: opacity 0.3s ease;
 }
 
-/* Play button */
 .play-btn {
     font-size: 40px;
     background: rgba(255,255,255,0.9);
@@ -188,7 +182,6 @@
     transform: scale(1.1);
 }
 
-/* Hide overlay when playing */
 .video-container.playing .video-overlay {
     opacity: 0;
     pointer-events: none;
@@ -211,12 +204,6 @@
     opacity: 1;
 }
 
-/* .video-container:hover video {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
-} */
-
-/* Toggle row */
 .banner-toggle {
     display: flex;
     align-items: center;
@@ -224,31 +211,28 @@
     cursor: pointer;
 }
 
-/* Arrow */
 .arrow {
     display: inline-block;
     font-size: 20px;
     transition: transform 0.3s ease;
 }
 
-/* Rotate when open */
 .arrow.open {
     transform: rotate(90deg);
 }
 
-/* Dropdown container */
 .banner-dropdown {
-    overflow: hidden;
-    max-height: 1000px; /* open state */
+    overflow-y: auto;
+    max-height: 90vh;
     transition: max-height 0.4s ease;
+    -webkit-overflow-scrolling: touch;
 }
 
-/* Closed state */
 .banner-dropdown.closed {
     max-height: 0;
+    overflow: hidden;
 }
 
-/* Inner content */
 .banner-content {
     background: white;
     color: #333;
@@ -257,7 +241,6 @@
     border-radius: 8px;
 }
 
-/* Make list look clean */
 .banner-content ul {
     margin-left: 20px;
 }

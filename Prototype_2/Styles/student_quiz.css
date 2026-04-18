@@ -2,7 +2,6 @@
     width: 100%;
 }
 
-/* Card behaviour */
 #quiz-card {
     display: flex;
     flex-direction: column;
@@ -21,14 +20,13 @@
 
 #quiz-content.fade-out {
     opacity: 0;
-    pointer-events: none; /* prevents clicking during fade */
+    pointer-events: none;
 }
 
 #quiz-content.fade-in {
     opacity: 1;
 }
 
-/* Optional: nice subtle slide + fade for even smoother feel */
 #quiz-content {
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
@@ -56,7 +54,6 @@
     opacity: 0.7;
 }
 
-/* Answers */
 #answers button {
     display: block;
     width: 100%;
@@ -78,7 +75,6 @@
     background: #e53935;
 }
 
-/* Footer area */
 .quiz-footer {
     margin-top: auto;
     display: flex;
@@ -86,14 +82,12 @@
     align-items: center;
 }
 
-/* Progress text */
 #progress {
     font-size: 0.9rem;
     opacity: 0.7;
     margin-bottom: 10px;
 }
 
-/* Buttons */
 .quiz-container button {
     padding: 10px 16px;
     border: none;
@@ -114,7 +108,6 @@
     display: none;
 }
 
-/* Footer pinned to bottom */
 .quiz-footer {
     margin-top: auto;
     padding-top: 20px;
@@ -124,13 +117,11 @@
     align-items: center;
 }
 
-/* Progress styling */
 #progress {
     font-size: 0.9rem;
     opacity: 0.7;
 }
 
-/* Hide start over until active */
 #startOverBtn {
     opacity: 0;
     pointer-events: none;

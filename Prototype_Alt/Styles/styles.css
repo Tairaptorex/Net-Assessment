@@ -1,5 +1,4 @@
         :root {
-            /* Colours */
             --primary: #bb4242;
             --secondary: #523a3a;
             --accent: #916868;
@@ -8,17 +7,13 @@
             --card-bg: rgb(230, 230, 230);
             --text: #333;
 
-            /* Shadows */
             --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.1);
             --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
 
-            /* Fonts */
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Open Sans', sans-serif;
         }
-        
-        
-        /* RESET */
+
         * {
             margin: 0;
             padding: 0;
@@ -45,7 +40,6 @@
             line-height: 1.6;
         }
 
-        /* A SIDE (Sidebar) */
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -79,7 +73,6 @@
             transition: all 0.2s ease;
         }
 
-        /* B SIDE (Main Content) */
         .main-content {
             margin-left: 250px;
             padding: 20px;
@@ -91,7 +84,6 @@
             background-attachment: fixed;
         }
 
-        /* Banner */
         .banner {
             background-color: var(--primary);
             color: white;
@@ -100,7 +92,6 @@
             margin-bottom: 20px;
         }
 
-        /* Content Cards */
         .card {
             background-color: var(--card-bg);
             padding: 20px;
@@ -125,7 +116,6 @@
             border-radius: 8px;
         }
 
-        /* Footer */
         .footer {
             text-align: center;
             padding: 20px;
@@ -134,7 +124,6 @@
             border-radius: 10px;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -182,7 +171,7 @@
             justify-content: center;
             align-items: center;
 
-            z-index: 9999; /* VERY important */
+            z-index: 9999;
         }
 
         #lightbox img {
@@ -219,7 +208,6 @@
             margin-top: 15px;
         }
 
-        /* REMOVE SIDEBAR LAYOUT EFFECT */
         body {
             display: block;
         }
@@ -229,7 +217,6 @@
             width: 100%;
         }
 
-        /* TOP NAV */
         .topnav {
             position: sticky;
             top: 0;
@@ -251,7 +238,6 @@
             background-color: #855e5e;
         }
 
-        /* ACCORDION */
         .card-header {
             width: 100%;
             background: none;
@@ -269,12 +255,10 @@
             transition: max-height 0.4s ease;
         }
 
-        /* OPEN STATE */
         .card.active .card-content {
-            max-height: 2000px; /* big enough to fit content */
+            max-height: 2000px;
         }
 
-        /* OPTIONAL: visual cue */
         .card-header::after {
             content: "▼";
             float: right;
@@ -310,15 +294,15 @@
 
         .main-content {
             margin-left: 0;
-            margin-top: 80px; /* pushes content below fixed nav */
+            margin-top: 80px;
             width: 100%;
         }
 
         .sidebar {
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
 
         .sidebar::-webkit-scrollbar {
-            display: none; /* Chrome */
+            display: none;
         }
     }

@@ -9,8 +9,6 @@
 </head>
 
 <body>
-
-<!-- HEADER NAV -->
 <div class="topnav">
     <a href="#section1">Introduction</a>
     <a href="#section2">Market Research</a>
@@ -19,17 +17,11 @@
     <a href="#section5">Card 4</a>
     <a href="#section6">Card 5</a>
 </div>
-
-    <!-- B SIDE: Main Content -->
     <div class="main-content">
-
-        <!-- Banner -->
         <div class="banner">
             <h1>DEVON, ANNA, and TAI's AWSOME WEBSITE</h1>
             <p>Prepared to be blown away</p>
         </div>
-
-        <!-- Content Cards -->
         <div id="section1" class="card">
         <button class="card-header">Introduction - Meet The Team</button>
         <div class="card-content">
@@ -138,8 +130,6 @@ Nulla fringilla, lectus ut mollis efficitur, nulla nunc semper ex, quis ullamcor
 Integer porta iaculis orci ut hendrerit. Nullam id ligula nulla. Nullam volutpat ornare commodo. Phasellus in neque posuere massa aliquet maximus. Donec quam nisi, bibendum eget consequat at, pulvinar ut nisi. Pellentesque turpis tellus, ultricies sed tellus quis, dapibus ultricies nunc. Fusce placerat tincidunt orci id pellentesque. Aenean congue quam nec nisi vestibulum, et interdum dolor semper. Aliquam vitae mattis sem. Nam luctus tempus malesuada. Donec bibendum orci leo, nec bibendum quam porttitor vitae. Nam pharetra egestas tristique. Donec quis porta erat, et efficitur orci. Duis et ullamcorper mi, vitae dapibus ipsum.</p>
         </div>
         </div>
-
-        <!-- Footer -->
         <div class="footer">
             <p>MSC Footer</p>
         </div>
@@ -163,14 +153,8 @@ navLinks.forEach(link => {
 
         const targetId = link.getAttribute("href").substring(1);
         const targetCard = document.getElementById(targetId);
-
-        // Close all
         document.querySelectorAll(".card").forEach(c => c.classList.remove("active"));
-
-        // Open target
         targetCard.classList.add("active");
-
-        // Scroll to it
         targetCard.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 });
@@ -216,11 +200,7 @@ cards.forEach(card => {
 
     header.addEventListener("click", () => {
         const isOpen = card.classList.contains("active");
-
-        // Close all
         cards.forEach(c => c.classList.remove("active"));
-
-        // Open clicked (if it wasn't already open)
         if (!isOpen) {
             card.classList.add("active");
         }

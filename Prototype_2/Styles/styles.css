@@ -1,5 +1,4 @@
         :root {
-            /* Colours */
             --primary: #a35151;
             --secondary: #523a3a;
             --accent: #916868;
@@ -8,17 +7,13 @@
             --card-bg: rgb(248, 248, 248);
             --text: #333;
 
-            /* Shadows */
             --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.644);
             --shadow-hover: 0 8px 18px rgba(0, 0, 0, 0.15);
 
-            /* Fonts */
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Open Sans', sans-serif;
         }
         
-        
-        /* RESET */
         * {
             margin: 0;
             padding: 0;
@@ -45,7 +40,7 @@
             line-height: 1.6;
         }
 
-        /* A SIDE (Sidebar) */
+        /* A SIDE */
         .sidebar {
             width: 250px;
             height: 100vh;
@@ -79,7 +74,7 @@
             transition: all 0.2s ease;
         }
 
-        /* B SIDE (Main Content) */
+        /* B SIDE */
         .main-content {
             margin-left: 250px;
             padding: 20px;
@@ -115,11 +110,6 @@
         .card {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
-        /* .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        } */
 
         .card-quote {
             background-color: rgb(236, 236, 236);
@@ -184,7 +174,6 @@
             border-radius: 10px;
         }
 
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
@@ -232,7 +221,7 @@
             justify-content: center;
             align-items: center;
 
-            z-index: 9999; /* VERY important */
+            z-index: 9999;
         }
 
         #lightbox img {
@@ -294,7 +283,7 @@
 
         .main-content {
             margin-left: 0;
-            margin-top: 80px; /* pushes content below fixed nav */
+            margin-top: 80px;
             width: 100%;
         }
 
